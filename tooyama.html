@@ -129,7 +129,7 @@
     display:flex;align-items:center;justify-content:center;gap:11px;
     width:100%;padding:19px;border:none;border-radius:16px;
     background:linear-gradient(140deg,var(--leaf) 0%,#1d3527 100%);
-    color:var(--paper);font-size:16.5px;font-weight:700;letter-spacing:.04em;
+    color:var(--paper);text-decoration:none;font-size:16.5px;font-weight:700;letter-spacing:.04em;
     font-family:inherit;cursor:pointer;
     box-shadow:0 8px 22px rgba(29,53,39,.28);
     transition:transform .12s ease, box-shadow .12s ease;
@@ -209,46 +209,15 @@
   </section>
 
   <div class="save-wrap">
-    <button class="save" id="save">
+    <a class="save" href="https://shinaienergy.github.io/meishi/tooyama.vcf" download>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
       連絡先を保存
-    </button>
+    </a>
   </div>
   <p class="hint">タップすると電話帳に追加できます</p>
 
   <footer class="foot">SHINAI ENERGY ／ 環境と暮らしをつなぐ</footer>
 </div>
 
-<script>
-const vcard = [
-  "BEGIN:VCARD",
-  "VERSION:3.0",
-  "N:遠山;貴子;;;",
-  "FN:遠山 貴子",
-  "X-PHONETIC-LAST-NAME:トオヤマ",
-  "X-PHONETIC-FIRST-NAME:タカコ",
-  "ORG:信愛エナジー株式会社",
-  "TITLE:営業部顧問",
-  "PHOTO;VALUE=URI;TYPE=JPEG:https://shinaienergy.github.io/meishi/tooyama-photo.jpg",
-  "TEL;TYPE=WORK,VOICE:045-459-5741",
-  "TEL;TYPE=CELL,VOICE:070-1210-8816",
-  "EMAIL;TYPE=WORK:shinai.energy@gmail.com",
-  "ADR;TYPE=WORK:;;神奈川県横浜市泉区上飯田町3609-1;;;;",
-  "URL:https://sinaienergy.jp/",
-  "END:VCARD"
-].join("\r\n");
-
-document.getElementById("save").addEventListener("click", function(){
-  const blob = new Blob(["\ufeff" + vcard], {type:"text/vcard;charset=utf-8"});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "遠山貴子_信愛エナジー.vcf";
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  setTimeout(()=>URL.revokeObjectURL(url), 1500);
-});
-</script>
 </body>
 </html>

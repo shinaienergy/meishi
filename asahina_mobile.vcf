@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:3.0
+N:朝比奈;巖;;;
+FN:朝比奈 巖
+X-PHONETIC-LAST-NAME:アサヒナ
+X-PHONETIC-FIRST-NAME:イワオ
+ORG:信愛エナジー株式会社
+TITLE:代表取締役社長
+PHOTO;VALUE=URI;TYPE=JPEG:https://shinaienergy.github.io/meishi/asahina-photo.jpg
+TEL;TYPE=WORK,VOICE:045-459-5741
+TEL;TYPE=CELL,VOICE:090-3575-9318
+EMAIL;TYPE=WORK:shinai.energy@gmail.com
+ADR;TYPE=WORK:;;神奈川県横浜市泉区上飯田町3609-1;;;;
+URL:https://sinaienergy.jp/
+END:VCARD
