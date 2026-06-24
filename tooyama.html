@@ -222,14 +222,14 @@
 <script>
 const vcard = [
   "BEGIN:VCARD",
-  "VERSION:4.0",
+  "VERSION:3.0",
   "N:遠山;貴子;;;",
   "FN:遠山 貴子",
   "X-PHONETIC-LAST-NAME:トオヤマ",
   "X-PHONETIC-FIRST-NAME:タカコ",
   "ORG:信愛エナジー株式会社",
   "TITLE:営業部顧問",
-  "PHOTO;MEDIATYPE=image/jpeg:https://shinaienergy.github.io/meishi/tooyama-photo.jpg",
+  "PHOTO;VALUE=URI;TYPE=JPEG:https://shinaienergy.github.io/meishi/tooyama-photo.jpg",
   "TEL;TYPE=WORK,VOICE:045-459-5741",
   "TEL;TYPE=CELL,VOICE:070-1210-8816",
   "EMAIL;TYPE=WORK:shinai.energy@gmail.com",
@@ -239,7 +239,7 @@ const vcard = [
 ].join("\r\n");
 
 document.getElementById("save").addEventListener("click", function(){
-  const blob = new Blob([vcard], {type:"text/vcard;charset=utf-8"});
+  const blob = new Blob(["\ufeff" + vcard], {type:"text/vcard;charset=utf-8"});
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
